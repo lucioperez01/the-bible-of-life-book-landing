@@ -1,16 +1,23 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Poppins, Open_Sans, Fjalla_One } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/ui/navbar";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+
+const primary = Poppins({ 
+  variable: "--font-primary",
+  subsets: ["latin"], 
+  weight: ["400", "700"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const secundary = Geist({
+  variable: "--font-secundary",
   subsets: ["latin"],
-});
+  weight: ["800"],
+  display: "swap",
+})
+
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -22,11 +29,14 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  let theme: string= 'dark'
+
   return (
-    <html lang="en">
+    <html lang="es">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${primary.variable} ${secundary.variable} antialiased`}
       >
+        <Navbar theme={theme}/>
         {children}
       </body>
     </html>
