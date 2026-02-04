@@ -12,8 +12,8 @@ type TiltCardProps = {
 
 export default function TiltCard({
   children,
-  className = "",
-  maxRotate = 5,
+  className = "h-full w-full",
+  maxRotate = 1.5,
   perspective = 900,
   scale = 1.02,
 }: TiltCardProps) {
@@ -59,7 +59,7 @@ export default function TiltCard({
       ref={ref}
       onMouseMove={handleMove}
       onMouseLeave={handleLeave}
-      className={`will-change-transform transition-transform duration-250 ease-out ${className}`}
+      className={`will-change-transform transition-transform duration-250 ease-out shadow-none ${className}`}
       style={{
         transformStyle: "preserve-3d",
       }}

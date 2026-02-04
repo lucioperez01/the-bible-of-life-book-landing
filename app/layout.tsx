@@ -34,7 +34,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body
-        className={`${primary.variable} ${secundary.variable} antialiased`}
+        className={`${primary.variable} ${secundary.variable} antialiased overflow-x-hidden w-full`}
       >
         <Navbar theme={theme}/>
         {children}
