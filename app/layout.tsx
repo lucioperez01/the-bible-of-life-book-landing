@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Poppins, Open_Sans, Fjalla_One } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/ui/navbar";
+import Script from 'next/script'
+import { Analytics } from "@vercel/analytics/next"
 
 
 const primary = Poppins({ 
@@ -48,6 +50,18 @@ export default function RootLayout({
 
   return (
     <html lang="es">
+      <Script id="ms-clarity" strategy="afterInteractive">
+          {`
+            (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "${process.env.NEXT_PUBLIC_CLARITY_ID}");
+          `}
+        </Script>
+
+        <Analytics />
+
       <body
         className={`${primary.variable} ${secundary.variable} antialiased overflow-x-hidden w-full`}
       >
