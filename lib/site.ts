@@ -1,7 +1,7 @@
 
 export const site = {
     brand: {
-        brandName: "hi",
+        brandName: "Legado Rod Montana",
         subtitle: "brand subtitle",
         whatsapp: 123456789,
         email: "emaildeejemplo@gmail.es"
