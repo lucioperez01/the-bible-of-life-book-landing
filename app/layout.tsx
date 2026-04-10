@@ -35,12 +35,6 @@ export const metadata: Metadata = {
     description: "Una guía clara para dejar de ser dominado y tomar las riendas de tu vida",
     creator: "@RodMontana",
   },
-  facebook: {
-    card: "summary_large_image",
-    title: "Legado Rod Montana",
-    description: "Una guía clara para dejar de ser dominado y tomar las riendas de tu vida",
-    creator: "@RodMontana",
-  }
 };
 
 
