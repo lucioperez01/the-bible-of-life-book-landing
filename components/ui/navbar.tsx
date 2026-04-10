@@ -20,7 +20,7 @@ export default function Navbar({ theme }: NavbarProps) {
                 height={50}
                 className="mx-auto h-10 w-10 "
             ></Image>
-            <p className="font-secundary">Rod Montana Academy</p>
+            <p className="font-secundary">Legado Rod Montana</p>
           </Link>
         </div>
 

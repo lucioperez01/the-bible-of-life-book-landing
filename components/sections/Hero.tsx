@@ -27,7 +27,7 @@ export default function Hero({theme}: HeroProps) {
                         </div>
                         <Image 
                             src="/logo-transparencia.png"
-                            alt="Rod Academy logo"
+                            alt="Legado Rod Montana logo"
                             width={500}
                             height={500}
                             className="w-32 h-32 mt-3 lg:w-48 lg:h-48"

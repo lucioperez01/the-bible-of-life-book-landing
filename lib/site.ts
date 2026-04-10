@@ -65,7 +65,7 @@ export const site = {
             price: 24.99,
             currency: '€',
             cardCTA: "Lo Quiero Ahora",
-            CTALink: "#",
+            CTALink: "https://wa.link/m4hrgl",
             finalPhrase: "Sólo 35 plazas disponibles"
         },
         secondCard: {
@@ -86,17 +86,13 @@ export const site = {
                     price: 34.99
                 },
                 {
-                    title: 'Clases explicativas PREMIUM',
-                    price: 199.99
-                },
-                {
                     title: "Acceso a 30 podcast VIP de Patreon más importantes para la vida",
                     price: 5
                 }
             ],
             price: 49.99,
             cardCTA: "Conseguir Ahora",
-            CTALink: "#",
+            CTALink: "https://wa.link/idus3i",
             currency: '€',
             finalPhrase: 'Sólo 5 plazas disponibles'
         }
