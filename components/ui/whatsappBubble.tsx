@@ -50,7 +50,7 @@ return (
         <img
         src="/WhatsApp.svg.png" // poné tu icono en public/
         alt="WhatsApp"
-        className="w-7 lg:w-6 h-5 lg:h-6 z-100"
+        className="w-7 lg:w-6 h-7 lg:h-6 z-100"
 
         />
     </a>
