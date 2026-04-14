@@ -55,11 +55,6 @@ export const site = {
             items: [
                 {
                     title: "Ebook: La Biblia de la vida, por Rod Montana ®", 
-                    price: 15
-                },
-                {
-                    title: "Acceso a grupo VIP de por vida", 
-                    price: 25
                 }
             ],
             price: 24.99,
@@ -78,11 +73,11 @@ export const site = {
                     price: 24.99
                 },
                 {
-                    title: 'EXCEL de entrenamiento de 3 meses',
+                    title: 'Seguimiento de la rutina de entrenamiento durante 3 meses',
                     price: 39.99
                 },
                 {
-                    title: 'PDF Nutrición G-FLUX',
+                    title: 'PDF Nutrición y entrenamiento G-FLUX',
                     price: 34.99
                 },
                 {

@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/ui/navbar";
 import Script from 'next/script'
 import { Analytics } from "@vercel/analytics/next"
+import WhatsAppBubble from "@/components/ui/whatsappBubble";
 
 
 const primary = Poppins({ 
@@ -66,6 +67,7 @@ export default function RootLayout({
         className={`${primary.variable} ${secundary.variable} antialiased overflow-x-hidden w-full`}
       >
         <Navbar theme={theme}/>
+        <WhatsAppBubble />
         {children}
       </body>
     </html>

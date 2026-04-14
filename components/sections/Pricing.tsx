@@ -1,6 +1,4 @@
-import { themes } from "@/lib/theme"
 import { site } from "@/lib/site"
-import TiltCard from "@/components/ui/tiltCard"
 import PricingCard from "../ui/pricingCard"
 
 
@@ -9,6 +7,7 @@ type PricingProps = {
 }
 
 export default function Pricing({ theme }: PricingProps) {
+
     return (
         <section id="pricing" className="w-full flex flex-col gap-5 items-center">
         <p className="font-secundary font-bold text-xl">Elige uno:</p>

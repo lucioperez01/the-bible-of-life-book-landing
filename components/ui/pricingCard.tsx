@@ -9,7 +9,7 @@ type siteData = {
     desc: string;
     items: {
         title: string;
-        price: number;
+        price?: number;
     }[];
     price:number;
     currency: string;
@@ -36,7 +36,9 @@ export default function PricingCard({ theme, siteData, highlighted }: PricingCar
     function finalPrice(siteData: siteData) {
         let finalPriceResult = 0;
         for (let item of siteData.items) {
-            finalPriceResult += item.price;
+            if(item.price !== undefined) {
+                finalPriceResult += item.price; 
+            }
         }
         return finalPriceResult;
     }
@@ -57,12 +59,22 @@ export default function PricingCard({ theme, siteData, highlighted }: PricingCar
                 <div className="flex flex-col gap-1 mt-1 ">{siteData.items.map((item) => (
                     <div key={item.title} className="flex p-1  items-baseline justify-between border-b border-amber-400">
                         <p className="text-sm">{item.title}</p>
-                        <p className="text-sm font-light ml-5">{`${item.price}${siteData.currency}`}</p>
+
+                        {(item.price) && (
+                            <p className="text-sm font-light ml-5">{`${item.price}${siteData.currency}`}</p>
+                        )}
+
+                        {item.price === 0 && (
+                            <p className="text-sm font-light ml-5"></p>
+                        )}
                     </div>
                 ))}
                 </div>
                 <div className="flex flex-col p-2 items-center"> 
-                    <div className="relative before:content-[''] before:h-px before:top-3 before:-left-0.5 before:w-18 before:absolute before:bg-amber-600 opacity-40 text-amber-600 text-lg  ">{`${finalPriceResult}${siteData.currency}`}</div>
+
+                    {finalPriceResult !== "0.00" && (<div className="relative before:content-[''] before:h-px before:top-3 before:-left-0.5 before:w-18 before:absolute before:bg-amber-600 opacity-40 text-amber-600 text-lg  ">{`${finalPriceResult}${siteData.currency}`}</div>)
+                        }
+                    
 
                     <p className={`rounded-lg text-3xl p-1 mb-2 text-amber-400`}>{`${siteData.price}${siteData.currency}`}</p>
                     
