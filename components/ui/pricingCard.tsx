@@ -46,7 +46,7 @@ export default function PricingCard({ theme, siteData, highlighted }: PricingCar
     let finalPriceResult = finalPrice(siteData).toFixed(2);
 
     return (
-        <TiltCard className={`  animate-border-flow flex flex-col items-center font-primary`}>
+        <TiltCard className={`animate-border-flow flex flex-col items-center font-primary`}>
             <section className={` flex flex-col items-center max-w-70 bg-gray-800/20 rounded-md shadow-xl py-5 px-6 ${highlight} border-2 lg:max-w-96 lg:w-80`}>
                 
                 <div className="absolute"><p className={`${sideTextColor} relative -left-27.5 -top-5 p-1 rounded-br-md rounded-tl-md text-xs lg:-left-32.5 `}>{siteData.sideText}</p></div>

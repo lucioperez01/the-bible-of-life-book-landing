@@ -8,6 +8,9 @@ import FinalCTA from "@/components/sections/FinalCTA";
 import FAQ from "@/components/sections/FAQ";
 import Footer from "@/components/sections/Footer";
 import PrePricing from "@/components/sections/prePricing";
+import { Book } from "lucide-react";
+import BookPresentation from "@/components/sections/BookPresentation";
+import AboutTheAuthor from "@/components/sections/AboutTheAuthor";
 
 
 const theme: string = 'dark';
@@ -15,13 +18,15 @@ const theme: string = 'dark';
 export default function Home() {
   return (
     <div className={`flex min-h-screen items-center justify-center ${themes[theme].bgRadial} w-full`}>
-      <main className={`flex flex-col min-h-screen max-w-4xl items-center py-5 px-8 gap-y-20 ${themes[theme].text} `}>
+      <main className={`flex flex-col min-h-screen max-w-4xl items-center py-5 px-8 gap-y-18 ${themes[theme].text} `}>
         
         <Hero theme={theme}/>
 
         <VideoCTA theme={theme}/>
 
         <Benefits theme={theme}/>
+
+        <BookPresentation theme={theme} />
 
         <PrePricing theme={theme}/>
 
@@ -30,6 +35,8 @@ export default function Home() {
         <SocialProof theme={theme}/>
 
         <FinalCTA theme={theme}/>
+
+        <AboutTheAuthor  />
 
         <FAQ />
 

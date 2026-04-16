@@ -149,11 +149,11 @@ export const site = {
             },
             {
                 q: "¿Puedo pagar desde mi país y en mi moneda local?",
-                a: "Sí. Los métodos de pago están adaptados por país: podés pagar con transferencia bancaria local desde tu país, usando tu moneda (sin complicaciones ni conversiones raras)."
+                a: "Sí. Los métodos de pago están adaptados por país: puedes pagar con transferencia bancaria local desde tu país, usando tu moneda (sin complicaciones ni conversiones raras)."
             },
             {
                 q: "¿Cuál es la diferencia entre PACK LIMITADO y PACK ELITE?",
-                a: "PACK LIMITADO: el libro + acceso base para aplicar el sistema. PACK ELITE: el libro + recursos premium para acelerar resultados y profundizar. 👉 Si quieres resultados rápidos y guía extra: ELITE."
+                a: "PACK LIMITADO: el libro sin guía. PACK ELITE: el libro + recursos premium para acelerar resultados y profundizar. 👉 Si quieres resultados rápidos y guía extra: ELITE."
             },
             
         ]
