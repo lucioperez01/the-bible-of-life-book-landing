@@ -9,7 +9,7 @@ export default function BookPresentation( { theme }: BookPresentationProps) {
     return (
         <div className={`border border-indigo-400/50 text-slate-200 text-[0.8rem] font-primary flex flex-col gap-2 w-[90%] lg:w-[80%]  lg:grid lg:grid-cols-2 lg:gap-2 lg:text-lg text-center items-center bg-blue-900 p-4 lg:p-3 rounded-md justify-center lg:justify-start bg-size-[200%_200%] bg-clip-text lg:max-w-3xl`}>
             <div className="flex justify-center">
-                <img src="/book_logo.png" alt="Book Cover" className="w-80 lg:w-68 rounded-lg shadow-md" />
+                <img src="/la-biblia-de-la-vida-cover.png" alt="Book Cover" className="w-80 lg:w-68 rounded-lg shadow-md" />
                 </div>
             <div className="max-w-sm text-center lg:text-left flex flex-col justify-center items-center p-3 lg:justify-around lg:items-start gap-2">
                 <h2 className="text-2xl font-bold text-amber-400 lg:text-3xl lg:text-center ">Ebook: La Biblia de la Vida:</h2>
