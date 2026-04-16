@@ -7,7 +7,7 @@ type BookPresentationProps = {
 
 export default function BookPresentation( { theme }: BookPresentationProps) {
     return (
-        <div className={`border border-indigo-400/50 text-slate-200 text-[0.8rem] font-primary flex flex-col gap-2 w-[80%] lg:grid lg:grid-cols-2 lg:gap-2 lg:text-lg text-center items-center bg-blue-900 p-4 lg:p-3 rounded-md justify-center lg:justify-start bg-size-[200%_200%] bg-clip-text lg:max-w-3xl`}>
+        <div className={`border border-indigo-400/50 text-slate-200 text-[0.8rem] font-primary flex flex-col gap-2 w-[90%] lg:w-[80%]  lg:grid lg:grid-cols-2 lg:gap-2 lg:text-lg text-center items-center bg-blue-900 p-4 lg:p-3 rounded-md justify-center lg:justify-start bg-size-[200%_200%] bg-clip-text lg:max-w-3xl`}>
             <div className="flex justify-center">
                 <img src="/book_logo.png" alt="Book Cover" className="w-80 lg:w-68 rounded-lg shadow-md" />
                 </div>

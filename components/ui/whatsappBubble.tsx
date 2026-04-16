@@ -34,8 +34,8 @@ return (
         <div
         className={`mr-3 mb-2 transition-all duration-300 ${open ? "opacity-100 translate-x-0" : "opacity-0 translate-x-5"}`}
         >
-        <div className="relative bg-linear-to-br from-green-500 to-green-600/ px-5 py-4 lg:py-4 pr-15 translate-x-15  translate-y-1.5 rounded-xl shadow-lg">
-        <p className="text-md lg:text-sm text-white "><a href={url}>¿Tienes dudas? Contactanos por WhatsApp!</a></p>
+        <div className="relative bg-linear-to-br from-green-500 to-green-600/ px-5 py-2 lg:py-4 pr-15 translate-x-15  translate-y-1.5 rounded-xl shadow-lg">
+        <p className="text-sm lg:text-md text-white "><a href={url}>¿Tienes dudas? Contactanos por WhatsApp!</a></p>
         
         </div>
         </div>
@@ -50,7 +50,7 @@ return (
         <img
         src="/WhatsApp.svg.png" // poné tu icono en public/
         alt="WhatsApp"
-        className="w-7 lg:w-6 h-7 lg:h-6 z-100"
+        className=" lg:w-6 h-7 lg:h-6 z-100"
 
         />
     </a>

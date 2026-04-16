@@ -1,10 +1,7 @@
 export default function AboutTheAuthor() {
     return (
         <section className="max-w-sm flex flex-col items-center gap-5 border border-indigo-400/50 text-slate-200 text-[0.8rem] font-primary lg:flex-row lg:text-lg text-center  bg-blue-900 p-8  rounded-md justify-center lg:justify-start bg-size-[200%_200%] bg-clip-text lg:max-w-3xl">
-            
-            
-            
-                <img src="/rod-montana.jpg" alt="Rod Montana" className="h-80 lg:h-70 rounded-lg shadow-lg" />
+                <img src="/rod-montana.jpg" alt="Rod Montana" className="h-80 lg:h-70 object-cover rounded-lg shadow-lg" />
 
                 <div className="flex flex-col lg:max-h-90 ">
                     <h2 className="font-secundary text-4xl font-bold text-amber-500 mb-5 lg:text-2xl lg:mb-2 lg:text-start">Sobre el autor:</h2>
