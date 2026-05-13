@@ -1,7 +1,9 @@
+'use client'
 import { Button } from "@/components/ui/button";
 import { themes } from "@/lib/theme";
 import { site } from "@/lib/site";
 import CTALandingButton from "@/components/ui/CTALandingButton";
+import { useEffect } from "react";
 
 type VideoCTAProps = {
     theme: string;
@@ -9,6 +11,15 @@ type VideoCTAProps = {
 
 
 export default function VideoCTA({ theme }: VideoCTAProps) {
+    useEffect(() => {
+        const ctaToPricing = document.querySelector('.cta__to__pricing');
+        const handleClick = () => {
+            const pricingSection = document.querySelector('#pricing');
+            if (pricingSection) {
+                pricingSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        };
+    })
     return (
         <section className="flex flex-col items-center justify-center gap-3 lg:gap-1 ">
             {/* <h2 className="font-secundary text-xl lg:text-2xl">{site.videoCTA.title}</h2> */}
@@ -35,11 +46,12 @@ export default function VideoCTA({ theme }: VideoCTAProps) {
                         {site.videoCTA.punchline}
                     </p> */}
 
-                    <div className="lg:col-start-2  flex flex-col items-center justify-center mt-3 gap-1">
+                    <div className="lg:col-start-2  flex flex-col items-center justify-center mt-3 gap-1 cta__to__pricing">
                         <CTALandingButton 
                         theme={theme} 
                         CTAtext={site.hero.ctaText} 
-                        href={site.hero.CTALink} 
+                        href="/#pricing"
+                        
                         />
                         <p className="text-center font-secundary text-xs text-slate-300 mt-1">
                         {site.videoCTA.comment}

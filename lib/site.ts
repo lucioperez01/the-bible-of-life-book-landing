@@ -10,7 +10,7 @@ export const site = {
         title: "LA FÓRMULA REAL PARA DEJAR DE SER UN MANGINA",
         titleAccent: "Y ACTIVAR TU MODO BESTIA.",
         ctaText: "QUIERO EMPEZAR AHORA",
-        CTALink: "#pricing",
+        CTALink: "/#pricing",
     },
     content: {
         paragraphOne: { 
