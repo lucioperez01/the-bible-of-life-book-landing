@@ -9,6 +9,11 @@ type NavbarProps = {
 export default function Navbar({ theme }: NavbarProps) {
   const t = themes[theme];
 
+  const phone = "573001660020" // tu número con código país (Argentina +54)
+  const message = "Hola, tengo dudas sobre el libro de Legado Rod Montana. ¿Podrían ayudarme?" // mensaje predefinido para el usuario
+
+  const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`
+
   return (
     <nav className={`${t.bg} ${t.text} hidden w-full text-center sm:flex items-center justify-center`}>
         <div className="w-[40dvw] flex items-center justify-between position-fixed relative">
@@ -28,7 +33,7 @@ export default function Navbar({ theme }: NavbarProps) {
           <ul className="flex gap-2 text-sm lg:text-md">
             <Link href="#"><li>Inicio</li></Link>
             <Link href="#pricing"><li>Pricing</li></Link>
-            <Link href="#contact"><li>Contacto</li></Link>
+            <Link href={url}><li>Contacto</li></Link>
           </ul>
         </div>
         

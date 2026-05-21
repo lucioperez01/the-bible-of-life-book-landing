@@ -1,3 +1,4 @@
+import { title } from "process";
 
 export const site = {
     brand: {
@@ -55,6 +56,15 @@ export const site = {
             items: [
                 {
                     title: "Ebook: La Biblia de la vida, por Rod Montana ®", 
+                },
+                {
+                    title: "EXCEL de Plan de entrenamiento de 1 año"
+                },
+                {
+                    title: "Mi dieta G-FLUX"
+                },
+                {
+                    title: "Mejores podcast de mi patreon privado"
                 }
             ],
             price: 24.99,
@@ -70,20 +80,11 @@ export const site = {
             items: [
                 {
                     title: "Todo lo que tiene el PACK LIMITADO",
-                    price: 24.99
                 },
                 {
-                    title: 'Seguimiento de la rutina de entrenamiento durante 3 meses',
-                    price: 39.99
+                    title: 'Seguimiento de la rutina de entrenamiento PERSONALIZADO: Mi equipo te responde cualquier duda respecto a la nutrición y suplementación.',
+                    
                 },
-                {
-                    title: 'PDF Nutrición y entrenamiento G-FLUX',
-                    price: 34.99
-                },
-                {
-                    title: "Acceso a 30 podcast VIP de Patreon más importantes para la vida",
-                    price: 5
-                }
             ],
             price: 49.99,
             cardCTA: "Conseguir Ahora",
