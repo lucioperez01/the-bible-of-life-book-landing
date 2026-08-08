@@ -32,9 +32,9 @@ export default function VideoCTA({ theme }: VideoCTAProps) {
 
                     {/* Imagen (columna izquierda ocupando todo) */}
                     <img 
-                        src="/la-biblia-de-la-vida-cover.png"
+                        src="/la-biblia-de-la-vida-cover.jpg"
                         alt="La Biblia de la Vida: Meditaciones de Rod Montana"
-                        className="lg:col-start-1 lg:row-span-3 h-90 w-full lg:h-95 object-cover rounded-lg shadow-lg"
+                        className="lg:col-start-1 lg:row-span-3 h-auto w-full object-cover rounded-lg shadow-lg"
                     />
 
                     {/* Contenido derecha */}
