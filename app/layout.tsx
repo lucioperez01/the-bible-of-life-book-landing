@@ -60,15 +60,13 @@ export default function RootLayout({
             })(window, document, "clarity", "script", "${process.env.NEXT_PUBLIC_CLARITY_ID}");
           `}
         </Script>
-
-        <Analytics />
-
       <body
         className={`${primary.variable} ${secundary.variable} antialiased overflow-x-hidden w-full`}
       >
         <Navbar theme={theme}/>
         <WhatsAppBubble />
         {children}
+        <Analytics />
       </body>
     </html>
   );
