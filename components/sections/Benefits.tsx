@@ -1,34 +1,35 @@
-import { themes } from "@/lib/theme"
-import { site } from "@/lib/site"
+import { site } from "@/lib/site";
+import Reveal from "@/components/ui/reveal";
 
-type BenefitsProps = {
-    theme: string;
-}
+export default function Benefits() {
+  return (
+    <section className="w-full py-16">
+      <div className="max-w-4xl mx-auto px-4">
+        <Reveal>
+          <h2 className="font-display text-2xl lg:text-4xl text-text text-center mb-3">
+            {site.benefits.title}
+          </h2>
+          <p className="text-text-muted text-sm text-center mb-10 font-secundary">
+            {site.benefits.titleDesc}
+          </p>
+        </Reveal>
 
-export default function Benefits({ theme }: BenefitsProps) {
-    return(
-        <div className="flex flex-col items-center">
-            <h3 className={`font-primary text-xl max-w-sm font-extrabold ${themes[theme].bgLinearText} to-amber-400 bg-size-[200%_200%] bg-clip-text text-transparent text-center lg:max-w-4xl lg:text-3xl w-full`}
-                >{site.benefits.title} 
-            </h3>
-            <section className={` flex flex-col items-center max-w-sm p-8 rounded-lg ${themes[theme].borderColor} lg:max-w-2xl`}>
-                <div className={`absolute -inset-px rounded-2xl opacity-10 -z-10`}></div>
-                
-                <div className="flex flex-col items-center justify-center lg:max-w-4xl">
-                    <p className="text-slate-400 font-secundary -translate-y-3.75 text-sm lg:text-xl">
-                        {site.benefits.titleDesc}
-                    </p>
-                </div>
-
-                    <div className={` text-slate-200 text-[0.8rem] font-primary flex flex-col gap-3 w-full lg:grid lg:grid-cols-2 lg:gap-2 lg:text-lg text-center`}>
-                        {site.benefits.items.map((item, idx) => (
-                            <p key={idx} className={`border ${themes[theme].borderColor} bg-blue-950/60 p-4 rounded-md flex items-center justify-center ${idx === site.benefits.items.length - 1 ? "lg:col-span-2 p-5" : ""}`}>
-                            {item.title}: {item.desc}
-                            </p>
-                        ))}
-                </div>
-            </section>
+        {/* Bento grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {site.benefits.items.map((item, idx) => (
+            <Reveal key={idx} delay={idx * 100}>
+              <div className="glass rounded-xl p-5 h-full hover:bg-white/[0.08] transition-colors duration-300">
+                <h3 className="font-secundary text-base text-text mb-1">
+                  {item.title}
+                </h3>
+                <p className="text-text-muted text-sm leading-relaxed">
+                  {item.desc}
+                </p>
+              </div>
+            </Reveal>
+          ))}
         </div>
-
-    )
+      </div>
+    </section>
+  );
 }

@@ -1,17 +1,23 @@
-import { title } from "process";
-
 export const site = {
     brand: {
         brandName: "Legado Rod Montana",
         subtitle: "brand subtitle",
-        whatsapp: 123456789,
+        whatsapp: "https://wa.link/hyn75c",
         email: "emaildeejemplo@gmail.es"
     },
     hero: {
         title: "LA FÓRMULA REAL PARA DEJAR DE SER UN MANGINA",
         titleAccent: "Y ACTIVAR TU MODO BESTIA.",
         ctaText: "QUIERO EMPEZAR AHORA",
-        CTALink: "/#pricing",
+        CTALink: "#pricing",
+    },
+    problem: {
+        title: "¿Te suena familiar?",
+        items: [
+            { title: "Nadie te escucha.", desc: "Sientes que no le importas a nadie." },
+            { title: "Nadie te respeta.", desc: "Sientes que nadie te toma en serio." },
+            { title: "Estás estancado.", desc: "Sientes que no avanzas en la vida." },
+        ]
     },
     content: {
         paragraphOne: { 
@@ -36,12 +42,23 @@ export const site = {
         title: "¿Qué vas a obtener con este libro?",
         titleDesc: "Ebook completo: La Biblia de la vida",
         items: [
-            {title: "✅ Mentalidad fuerte", desc: "Dejar excusas, dejar victimismo y volver a tener hambre."},
-        {title: "✅ Disciplina real", desc: "Sistema mental para hacer lo que hay que hacer incluso cuando no quieres."},
-        {title: "✅ Respeto y presencia masculina", desc: "Porque un hombre sin carácter se nota desde lejos."},
-        {title: "✅ Cuerpo como herramienta", desc: "Entrenar no es estética: es identidad, testosterona, energía, enfoque."},
-        {title: "✅ Independencia como objetivo", desc: "Pensamiento claro sobre dinero, libertad y decisiones propias."},
+            {title: "Mentalidad fuerte", desc: "Dejar excusas, dejar victimismo y volver a tener hambre."},
+            {title: "Disciplina real", desc: "Sistema mental para hacer lo que hay que hacer incluso cuando no quieres."},
+            {title: "Respeto y presencia masculina", desc: "Porque un hombre sin carácter se nota desde lejos."},
+            {title: "Cuerpo como herramienta", desc: "Entrenar no es estética: es identidad, testosterona, energía, enfoque."},
+            {title: "Independencia como objetivo", desc: "Pensamiento claro sobre dinero, libertad y decisiones propias."},
         ]
+    },
+    bookShowcase: {
+        title: "Ebook: La Biblia de la Vida",
+        subtitle: "Meditaciones de Rod Montana",
+        description: "Un sistema práctico y directo para construir disciplina, fuerza mental y control real sobre tu vida. Deja excusas, toma decisiones firmes y desarrolla hábitos que te vuelvan más enfocado, independiente y consistente. Menos teoría. Más acción.",
+        coverAlt: "La Biblia de la Vida: Meditaciones de Rod Montana",
+        ctaText: "COMPRAR AHORA — 9,99 €",
+        ctaLink: "https://wa.link/hyn75c",
+        price: "9.99",
+        currency: "€",
+        badge: "Limitado"
     },
     prePricing: {
         p1: "Te felicito, llegaste hasta aquí, diste un gran paso.",
@@ -99,31 +116,31 @@ export const site = {
         items: [
             {
                 stars: '⭐⭐⭐⭐⭐',
-                text: '“Lo leí en dos días. No es un libro para sentirte bien, es para reaccionar. Me acomodó la cabeza y volví al gimnasio como antes.”',
+                text: '"Lo leí en dos días. No es un libro para sentirte bien, es para reaccionar. Me acomodó la cabeza y volví al gimnasio como antes."',
                 name: 'Matías',
                 age: 26
             },
             {
                 stars: '⭐⭐⭐⭐⭐',
-                text: '“Me di cuenta de cuánto me estaba domesticando por quedar bien. Cambié hábitos, cambié amistades, cambié energía.”',
+                text: '"Me di cuenta de cuánto me estaba domesticando por quedar bien. Cambié hábitos, cambié amistades, cambié energía."',
                 name: 'Santiago',
                 age: 31
             },
             {
                 stars: '⭐⭐⭐⭐⭐',
-                text: '“No es políticamente correcto y por eso funciona. Te obliga a mirarte al espejo sin mentirte.”',
+                text: '"No es políticamente correcto y por eso funciona. Te obliga a mirarte al espejo sin mentirte."',
                 name: 'Nico',
                 age: 22
             },
             {
                 stars: '⭐⭐⭐⭐⭐',
-                text: '“Pensé que era humo. Pero es práctico. Te ordena mentalmente y te deja con ganas de hacer.”',
+                text: '"Pensé que era humo. Pero es práctico. Te ordena mentalmente y te deja con ganas de hacer."',
                 name: 'Julián',
                 age: 28
             },
             {
                 stars: '⭐⭐⭐⭐⭐',
-                text: '“No necesitaba más teoría: necesitaba carácter. Este libro fue el empujón que me faltaba.”',
+                text: '"No necesitaba más teoría: necesitaba carácter. Este libro fue el empujón que me faltaba."',
                 name: 'Rodrigo',
                 age: 34
             },
@@ -158,5 +175,11 @@ export const site = {
             },
             
         ]
+    },
+    footer: {
+        copyright: "© 2026 Rod Montana. Todos los derechos reservados.",
+        devCredit: "Web desarrollada por Lutec.dev | Pérez Lucio Gabriel",
+        instagram: "https://www.instagram.com/lutec.dev/",
+        github: "https://github.com/lucioperez01"
     }
 };

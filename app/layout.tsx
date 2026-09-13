@@ -21,6 +21,13 @@ const secundary = Geist({
   display: "swap",
 })
 
+const display = Fjalla_One({
+  variable: "--font-display",
+  subsets: ["latin"],
+  weight: ["400"],
+  display: "swap",
+})
+
 
 export const metadata: Metadata = {
   title: "Legado Rod Montana",
@@ -47,10 +54,9 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  let theme: string= 'dark'
 
   return (
-    <html lang="es">
+    <html lang="es" className="dark">
       <Script id="ms-clarity" strategy="afterInteractive">
           {`
             (function(c,l,a,r,i,t,y){
@@ -64,9 +70,9 @@ export default function RootLayout({
         <Analytics />
 
       <body
-        className={`${primary.variable} ${secundary.variable} antialiased overflow-x-hidden w-full`}
+        className={`${primary.variable} ${secundary.variable} ${display.variable} antialiased overflow-x-hidden w-full bg-canvas text-text`}
       >
-        <Navbar theme={theme}/>
+        <Navbar />
         <WhatsAppBubble />
         {children}
       </body>

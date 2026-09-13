@@ -1,59 +1,61 @@
-"use client"
+"use client";
 
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
+import { site } from "@/lib/site";
 
 export default function WhatsAppBubble() {
-const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false);
 
-useEffect(() => {
-    // abrir a los 7s
+  useEffect(() => {
     const openTimer = setTimeout(() => {
-    setOpen(true)
-    }, 2000)
+      setOpen(true);
+    }, 2000);
 
-    // cerrar 5s después de abrir
     const closeTimer = setTimeout(() => {
-    setOpen(false)
-    }, 15000)
+      setOpen(false);
+    }, 15000);
 
     return () => {
-    clearTimeout(openTimer)
-    clearTimeout(closeTimer)
-    }
-}, [])
+      clearTimeout(openTimer);
+      clearTimeout(closeTimer);
+    };
+  }, []);
 
-const phone = "573001660020" // tu número con código país (Argentina +54)
-const message = "Hola, tengo dudas sobre el libro de Legado Rod Montana. ¿Podrían ayudarme?" // mensaje predefinido para el usuario
+  const whatsappUrl = site.brand.whatsapp;
 
-const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`
-
-return (
-    <div className="fixed bottom-5 right-5 z-50 flex items-center">
-        
-        {/* Mensaje */}
-        <div
-        className={`mr-3 mb-2 transition-all duration-300 ${open ? "opacity-100 translate-x-0" : "opacity-0 translate-x-5"}`}
-        >
-        <div className="relative bg-linear-to-br from-green-500 to-green-600/ px-5 py-2 lg:py-4 pr-15 translate-x-15  translate-y-1.5 rounded-xl shadow-lg">
-        <p className="text-sm lg:text-md text-white "><a href={url}>¿Tienes dudas? Contactanos por WhatsApp!</a></p>
-        
+  return (
+    <div className="fixed bottom-5 right-5 z-50 flex items-end">
+      {/* Message bubble */}
+      <div
+        className={`mr-3 mb-2 transition-all duration-300 ${
+          open ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-5 pointer-events-none"
+        }`}
+      >
+        <div className="relative bg-gradient-to-br from-green-500 to-green-600 px-4 py-2 pr-12 rounded-xl shadow-lg glass">
+          <p className="text-sm text-white">
+            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+              ¿Tienes dudas? Contactanos por WhatsApp!
+            </a>
+          </p>
+          {/* Arrow */}
+          <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 w-3 h-3 bg-green-600 rotate-45" />
         </div>
-        </div>
+      </div>
 
-    {/* Botón */}
-    <a
-        href={url}
+      {/* Button */}
+      <a
+        href={whatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition z-10"
-    >
+        className="bg-green-500 hover:bg-green-600 text-white p-3 rounded-full shadow-lg transition-all hover:scale-110"
+        aria-label="Contactar por WhatsApp"
+      >
         <img
-        src="/WhatsApp.svg.png" // poné tu icono en public/
-        alt="WhatsApp"
-        className=" lg:w-6 h-7 lg:h-6 z-100"
-
+          src="/WhatsApp.svg.png"
+          alt="WhatsApp"
+          className="w-7 h-7"
         />
-    </a>
+      </a>
     </div>
-)
+  );
 }

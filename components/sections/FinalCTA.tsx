@@ -1,17 +1,30 @@
-import { site } from "@/lib/site"
-import CTALandingButton from "@/components/ui/CTALandingButton"
+import { site } from "@/lib/site";
+import CTALandingButton from "@/components/ui/CTALandingButton";
+import Reveal from "@/components/ui/reveal";
 
-type FinalCTAProps = {
-    theme: string;
-}
-
-export default function FinalCTA({theme}: FinalCTAProps) {
-    return(
-        <section className="font-secundary flex flex-col items-center gap-1 text-center max-w-80 p-5 overflow-x-hidden lg:max-w-xl">
-            <h2 className="text-xl lg:text-2xl">{site.finalCTA.title}</h2>
-            <p className="font-primary mb-3 lg:text-2xl lg:max-w-md">{site.finalCTA.desc}
-            <span className="text-amber-300 font-secundary"> {site.finalCTA.punchline}</span></p>
-            <CTALandingButton theme={theme} CTAtext={site.finalCTA.CTAText} href={site.finalCTA.CTALink}/>
-        </section>
-    )
+export default function FinalCTA() {
+  return (
+    <section className="w-full py-16">
+      <div className="max-w-xl mx-auto px-4 text-center">
+        <Reveal>
+          <h2 className="font-display text-2xl lg:text-3xl text-text mb-3">
+            {site.finalCTA.title}
+          </h2>
+          <p className="font-primary text-text-muted mb-2 leading-relaxed">
+            {site.finalCTA.desc}
+          </p>
+          <p className="font-secundary text-accent-gold text-lg mb-6">
+            {site.finalCTA.punchline}
+          </p>
+          <div className="flex justify-center">
+            <CTALandingButton
+              theme="dark"
+              CTAtext={site.finalCTA.CTAText}
+              href={site.finalCTA.CTALink}
+            />
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
 }

@@ -4,6 +4,7 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  /* === shadcn/ui base tokens === */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
@@ -35,8 +36,8 @@
   --color-primary: var(--primary);
   --color-popover-foreground: var(--popover-foreground);
   --color-popover: var(--popover);
-  --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -44,6 +45,28 @@
   --radius-2xl: calc(var(--radius) + 8px);
   --radius-3xl: calc(var(--radius) + 12px);
   --radius-4xl: calc(var(--radius) + 16px);
+
+  /* === Premium Dark Redesign tokens === */
+  /* Canvas */
+  --color-canvas: oklch(0.1 0.015 280);
+  --color-canvas-muted: oklch(0.14 0.02 280);
+  --color-canvas-elevated: oklch(0.18 0.02 280);
+
+  /* Text */
+  --color-text: oklch(0.96 0 0);
+  --color-text-muted: oklch(0.7 0 0);
+  --color-text-subtle: oklch(0.5 0 0);
+
+  /* Accent */
+  --color-accent-brand: oklch(0.65 0.22 25);
+  --color-accent-brand-hover: oklch(0.7 0.24 25);
+  --color-accent-gold: oklch(0.75 0.18 85);
+  --color-accent-gold-muted: oklch(0.65 0.15 85);
+
+  /* Glass */
+  --color-glass-bg: oklch(1 0 0 / 5%);
+  --color-glass-border: oklch(1 0 0 / 10%);
+  --color-glass-bg-hover: oklch(1 0 0 / 8%);
 }
 
 :root {
@@ -115,16 +138,257 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+/* === Font utility classes === */
 .font-secundary {
   font-family: var(--font-secundary), sans-serif;
 }
 .font-primary {
   font-family: var(--font-primary), sans-serif;
 }
-.animated-border {
-  border-color: red;
-  border-bottom: 50px;
+.font-display {
+  font-family: var(--font-display), sans-serif;
 }
+
+/* === Glassmorphism utility === */
+.glass {
+  background: var(--color-glass-bg);
+  border: 1px solid var(--color-glass-border);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.glass:hover {
+  background: var(--color-glass-bg-hover);
+}
+
+/* === Animation keyframes === */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px oklch(0.65 0.22 25 / 0.3); }
+  50% { box-shadow: 0 0 40px oklch(0.65 0.22 25 / 0.6); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes border-flow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* === Premium Book3D animations === */
+@keyframes book-float {
+  0%, 100% { transform: translateY(0) rotateY(0deg); }
+  25% { transform: translateY(-18px) rotateY(2deg); }
+  50% { transform: translateY(-8px) rotateY(0deg); }
+  75% { transform: translateY(-22px) rotateY(-2deg); }
+}
+
+@keyframes book-glow-pulse {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.55; transform: scale(1.08); }
+}
+
+@keyframes shadow-breathe {
+  0%, 100% { transform: scale(1); opacity: 0.4; }
+  50% { transform: scale(0.85); opacity: 0.25; }
+}
+
+@keyframes sparkle {
+  0% { opacity: 0; transform: scale(0) rotate(0deg); }
+  20% { opacity: 1; transform: scale(1) rotate(90deg); }
+  80% { opacity: 1; transform: scale(1) rotate(270deg); }
+  100% { opacity: 0; transform: scale(0) rotate(360deg); }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%) rotate(25deg); }
+  100% { transform: translateX(200%) rotate(25deg); }
+}
+
+@keyframes gentle-rotate {
+  0%, 100% { transform: rotateY(-3deg); }
+  50% { transform: rotateY(3deg); }
+}
+
+/* === Animation utility classes === */
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out both;
+}
+
+.animate-reveal {
+  animation: reveal-up 0.7s ease-out both;
+}
+
+/* === Premium Book3D animation utilities === */
+.animate-book-float {
+  animation: book-float 6s ease-in-out infinite;
+}
+
+.animate-book-glow {
+  animation: book-glow-pulse 4s ease-in-out infinite;
+}
+
+.animate-shadow-breathe {
+  animation: shadow-breathe 6s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+.animate-gentle-rotate {
+  animation: gentle-rotate 8s ease-in-out infinite;
+}
+
+/* === BookShowcase Background === */
+.bookshowcase-bg {
+  background: 
+    radial-gradient(ellipse 1200px 900px at 50% 50%, oklch(0.22 0.03 280) 0%, oklch(0.1 0.015 280) 100%);
+  position: relative;
+}
+
+.bookshowcase-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.05;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Sparkle particles (CSS-only) */
+.sparkle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: oklch(0.75 0.18 85);
+  border-radius: 50%;
+  box-shadow: 0 0 6px oklch(0.75 0.18 85 / 0.8);
+}
+
+.sparkle::before,
+.sparkle::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(90deg, transparent, oklch(0.85 0.15 85), transparent);
+  border-radius: 50%;
+}
+
+.sparkle::after {
+  transform: rotate(90deg);
+}
+
+/* === Hero Background Effects === */
+.hero-aurora {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-aurora::before {
+  content: '';
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  top: -10%;
+  left: -10%;
+  background: radial-gradient(circle, oklch(0.65 0.22 25 / 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(80px);
+  animation: aurora-drift 12s ease-in-out infinite;
+}
+
+.hero-aurora::after {
+  content: '';
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  bottom: -15%;
+  right: -5%;
+  background: radial-gradient(circle, oklch(0.75 0.18 85 / 0.12) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(100px);
+  animation: aurora-drift 15s ease-in-out infinite reverse;
+}
+
+.hero-spotlight {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 600px 400px at 50% 50%, oklch(0.65 0.22 25 / 0.08) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-grain {
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 1;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+@keyframes aurora-drift {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(30px, -20px) scale(1.1); }
+}
+
+/* Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .animate-float,
+  .animate-pulse-glow,
+  .animate-fade-in,
+  .animate-reveal,
+  .animate-border-flow,
+  .animate-book-float,
+  .animate-book-glow,
+  .animate-shadow-breathe,
+  .animate-shimmer,
+  .animate-gentle-rotate,
+  .animate-border-flow {
+    animation: none !important;
+  }
+
+  .sparkle {
+    display: none !important;
+  }
+
+  .hero-aurora::before,
+  .hero-aurora::after {
+    animation: none !important;
+  }
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -133,5 +397,3 @@
     @apply bg-background text-foreground;
   }
 }
-
-

@@ -1,44 +1,36 @@
-import { themes } from "@/lib/theme";
 import Hero from "@/components/sections/Hero";
-import VideoCTA from "@/components/sections/VideoCta";
+import Problem from "@/components/sections/Problem";
+import BookShowcase from "@/components/sections/BookShowcase";
 import Benefits from "@/components/sections/Benefits";
+import AboutTheAuthor from "@/components/sections/AboutTheAuthor";
 import Pricing from "@/components/sections/Pricing";
 import SocialProof from "@/components/sections/SocialProof";
-import FinalCTA from "@/components/sections/FinalCTA";
 import FAQ from "@/components/sections/FAQ";
+import FinalCTA from "@/components/sections/FinalCTA";
 import Footer from "@/components/sections/Footer";
-import PrePricing from "@/components/sections/prePricing";
-import { Book } from "lucide-react";
-import BookPresentation from "@/components/sections/BookPresentation";
-import AboutTheAuthor from "@/components/sections/AboutTheAuthor";
-
-
-const theme: string = 'dark';
 
 export default function Home() {
   return (
-    <div className={`flex min-h-screen items-center justify-center ${themes[theme].bgRadial} w-full`}>
-      <main className={`flex flex-col min-h-screen max-w-4xl items-center py-5 px-8 gap-y-18 ${themes[theme].text} `}>
+    <div className="flex min-h-screen items-center justify-center w-full overflow-hidden">
+      <main className="flex flex-col min-h-screen max-w-5xl items-center py-5 px-4 lg:px-8 w-full">
         
-        <Hero theme={theme}/>
+        <Hero />
 
-        <VideoCTA theme={theme}/>
+        <Problem />
 
-        <Benefits theme={theme}/>
+        <BookShowcase />
 
-        <BookPresentation theme={theme} />
+        <Benefits />
 
-        <PrePricing theme={theme}/>
+        <Pricing />
 
-        <Pricing theme={theme}/>
+        <SocialProof />
 
-        <SocialProof theme={theme}/>
-
-        <FinalCTA theme={theme}/>
-
-        <AboutTheAuthor  />
+        <AboutTheAuthor />
 
         <FAQ />
+
+        <FinalCTA />
 
         <Footer />
 

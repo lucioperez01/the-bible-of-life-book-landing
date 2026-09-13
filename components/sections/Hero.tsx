@@ -1,48 +1,76 @@
-import { themes } from "@/lib/theme"
 import { site } from "@/lib/site";
-import Image from "next/image";
+import Reveal from "@/components/ui/reveal";
+import Book3D from "@/components/ui/book3d";
+import CTALandingButton from "@/components/ui/CTALandingButton";
 
-type HeroProps = {
-    theme: string;
-}
+export default function Hero() {
+  return (
+    <section className="relative flex items-center justify-center w-full pt-20 pb-12 lg:pt-24 lg:min-h-screen">
+      {/* Background Effects: Aurora + Spotlight + Grain — extends beyond container */}
+      <div className="absolute inset-0 w-[100vw] left-1/2 -translate-x-1/2 overflow-hidden pointer-events-none" aria-hidden="true">
+        <div className="hero-aurora" />
+        <div className="hero-spotlight" />
+        <div className="hero-grain" />
+      </div>
 
-export default function Hero({theme}: HeroProps) {
-    return(
-        <section className="flex flex-col items-center justify-center gap-2 w-full">
-            {/* <div className={`${themes[theme].bg} p-2 rounded-md`}>
-                {/* <p className={`font-primary text-center text-4xl `}></p> */}
-            {/* </div> */} 
-            
-                <div className="flex flex-col font-secundary text-center text-xl items-center max-w-sm lg:max-w-xl lg:text-4xl">
-                    <h1 className="lg:text-4xl lg:max-w-lg lg:text-justify font-extrabold "
-                        >{site.hero.title}
-                    </h1>
-                    
-                <div className="lg:flex lg:flex-col items-center flex flex-col justify-center gap-1">
-                    
-                        <div className= {`${themes[theme].bg} text-xl p-1 text-center lg:text-4xl rounded-xs lg:max-w-xl`}>
-                            <p>
-                                {site.hero.titleAccent}
-                            </p>
-                        </div>
-                        <Image 
-                            src="/logo-transparencia.png"
-                            alt="Legado Rod Montana logo"
-                            width={500}
-                            height={500}
-                            className="w-32 h-32 mt-3 lg:w-48 lg:h-48"
-                        ></Image>
-                    
-                        <div className="flex flex-col font-secundary mt-5 gap-2 text-lg text-center lg:text-xl lg:max-w-lg font-primary lg:text-justify">
-                            <p> 
-                                {site.content.paragraphOne.title} <span className={`${themes[theme].bg} text-center max-w-lg px-1 `}>{site.content.paragraphOne.accent}</span>  </p>
+      {/* Content: Split Layout */}
+      <div className="relative z-10 w-full max-w-7xl px-4 lg:px-12">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+          
+          {/* Left Column: Text Content */}
+          <div className="flex flex-col gap-4 lg:gap-5 text-left">
+            {/* Main headline */}
+            <Reveal animation="slide-up" delay={0}>
+              <h1 className="font-display text-text leading-tight" style={{ fontSize: 'clamp(1.75rem, 4.5vw, 3.5rem)' }}>
+                {site.hero.title}
+              </h1>
+            </Reveal>
 
-                            <p>
-                                {site.content.paragraphTwo.title}
-                            </p>
-                        </div>
-                </div>
-                </div>
-        </section>
-    )
+            <Reveal animation="slide-up" delay={100}>
+              <div className="relative">
+                <p className="font-display text-xl sm:text-2xl lg:text-4xl text-accent-brand leading-tight animate-float">
+                  {site.hero.titleAccent}
+                </p>
+                {/* Glow behind text */}
+                <div className="absolute -inset-3 lg:-inset-4 bg-accent-brand/10 blur-xl rounded-full -z-10" />
+              </div>
+            </Reveal>
+
+            {/* Subtitle paragraphs */}
+            <Reveal animation="slide-up" delay={200}>
+              <div className="flex flex-col font-primary gap-2 lg:gap-3 text-sm sm:text-base lg:text-xl text-text-muted">
+                <p>
+                  {site.content.paragraphOne.title}{' '}
+                  <span className="text-accent-gold font-medium">
+                    {site.content.paragraphOne.accent}
+                  </span>
+                </p>
+                <p>{site.content.paragraphTwo.title}</p>
+              </div>
+            </Reveal>
+
+            {/* CTA Button */}
+            <Reveal animation="slide-up" delay={300}>
+              <div className="mt-4 lg:mt-6">
+                <CTALandingButton
+                  CTAtext={site.hero.ctaText}
+                  href={site.hero.CTALink}
+                />
+              </div>
+            </Reveal>
+          </div>
+
+          {/* Right Column: 3D Book */}
+          <Reveal animation="fade-in" delay={400}>
+            <div className="flex justify-center lg:justify-end">
+              <Book3D size="sm" className="inline mt-5 lg:hidden"/>
+              <Book3D size="xl" className="hidden lg:inline"/>
+              
+            </div>
+          </Reveal>
+
+        </div>
+      </div>
+    </section>
+  );
 }

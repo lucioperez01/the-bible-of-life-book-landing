@@ -1,15 +1,37 @@
+import Reveal from '@/components/ui/reveal';
+
 export default function AboutTheAuthor() {
-    return (
-        <section className="max-w-sm flex flex-col items-center gap-5 border border-indigo-400/50 text-slate-200 text-[0.8rem] font-primary lg:flex-row lg:text-lg text-center  bg-blue-900 p-8  rounded-md justify-center lg:justify-start bg-size-[200%_200%] bg-clip-text lg:max-w-3xl">
-                <img src="/rod-montana.jpg" alt="Rod Montana" className="h-80 lg:h-70 object-cover rounded-lg shadow-lg" />
+  return (
+    <section id="author" className="w-full py-16">
+      <div className="max-w-3xl mx-auto px-4">
+        <Reveal>
+          <div className="glass rounded-2xl p-8 lg:p-10">
+            <div className="flex flex-col lg:flex-row items-center gap-8">
+              {/* Author photo */}
+              <div className="shrink-0">
+                <img
+                  src="/rod-montana.jpg"
+                  alt="Rod Montana"
+                  className="w-60 h-60 lg:w-40 lg:h-72 object-cover rounded-xl shadow-xl"
+                />
+              </div>
 
-                <div className="flex flex-col lg:max-h-90 ">
-                    <h2 className="font-secundary text-4xl font-bold text-amber-500 mb-5 lg:text-2xl lg:mb-2 lg:text-start">Sobre el autor:</h2>
-                    <p className="font-primary max-w-md text-sm lg:text-md text-justify ">Soy Rod Montana y comparto un enfoque directo y sin filtros sobre el desarrollo personal. Mi contenido está pensado para quienes se sienten estancados y saben que pueden dar más, pero necesitan un cambio real. Para mí, el carácter, el trabajo físico y el enfoque en resultados son claves.</p>
-
-                    <p className="text-justify font-secundary text-amber-500 lg:text-md">Mi estilo puede incomodar, pero es honesto. Mi objetivo es simple: ayudarte a dejar excusas, recuperar el control y convertirte en alguien que se respeta.</p>
-                </div>
-            
-        </section>
-    )
+              {/* Content */}
+              <div className="flex flex-col text-center lg:text-left">
+                <h2 className="font-display text-2xl lg:text-3xl text-accent-gold mb-4">
+                  Sobre el autor:
+                </h2>
+                <p className="text-text-muted text-sm lg:text-base leading-relaxed mb-4 max-w-md">
+                  Soy Rod Montana y comparto un enfoque directo y sin filtros sobre el desarrollo personal. Mi contenido está pensado para quienes se sienten estancados y saben que pueden dar más, pero necesitan un cambio real. Para mí, el carácter, el trabajo físico y el enfoque en resultados son claves.
+                </p>
+                <p className="font-secundary text-accent-gold text-sm lg:text-base">
+                  Mi estilo puede incomodar, pero es honesto. Mi objetivo es simple: ayudarte a dejar excusas, recuperar el control y convertirte en alguien que se respeta.
+                </p>
+              </div>
+            </div>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
 }
