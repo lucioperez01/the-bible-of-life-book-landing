@@ -138,13 +138,21 @@ export const site = {
                 name: 'Julián',
                 age: 28
             },
-            {
-                stars: '⭐⭐⭐⭐⭐',
-                text: '"No necesitaba más teoría: necesitaba carácter. Este libro fue el empujón que me faltaba."',
-                name: 'Rodrigo',
-                age: 34
-            },
             
+        ],
+        whatsapp: [
+            {
+                image: "/review_1.jpg",
+                alt: "Review de WhatsApp de Ruben: Me ha encantado el libro. Es una gran inversión si quieres mejorar en todos ámbitos en lo que se refiere a la autosuficiencia. Lo recomiendo bastante. Gracias Rod.",
+                transcription: "Me ha encantado el libro. Es una gran inversión si quieres mejorar en todos ámbitos en lo que se refiere a la autosuficiencia. Lo recomiendo bastante. Gracias Rod.",
+                author: "Ruben"
+            },
+            {
+                image: "/review_2.jpg",
+                alt: "Review de WhatsApp anónima: Hola buenas la verdad que el libro es increible me gusto mucho",
+                transcription: "Hola buenas la verdad que el libro es increible me gusto mucho 👏💪",
+                author: "Brain"
+            }
         ]
     },
     finalCTA: {
@@ -157,6 +165,10 @@ export const site = {
     faq: {
         title: "Preguntas Frecuentes:",
         items: [
+            {
+                q: "¿Puedo comprar el libro por separado?",
+                a: "Sí. Puedes adquirir únicamente el libro por 9,99 €, sin necesidad de comprar ningún otro producto o paquete."
+            },
             {
                 q: "¿Qué formato tiene?",
                 a: "📘 Ebook digital (acceso inmediato). Lo compras y lo tienes al instante."
