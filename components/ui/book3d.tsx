@@ -16,7 +16,7 @@ const sizes = {
 };
 
 export default function Book3D({
-  coverSrc = '/la-biblia-de-la-vida-cover.jpg',
+  coverSrc = '/la-biblia-de-la-vida-cover.avif',
   alt = 'La Biblia de la Vida - Rod Montana',
   className,
   size = 'lg',
