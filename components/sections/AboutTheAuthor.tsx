@@ -10,7 +10,7 @@ export default function AboutTheAuthor() {
               {/* Author photo */}
               <div className="shrink-0">
                 <img
-                  src="/rod-montana.jpg"
+                  src="/rod-montana.jpeg"
                   alt="Rod Montana"
                   className="w-60 h-60 lg:w-40 lg:h-72 object-cover rounded-xl shadow-xl"
                 />

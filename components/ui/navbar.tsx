@@ -16,7 +16,7 @@ export default function Navbar() {
           {/* Logo + Brand */}
           <Link href="#" className="flex items-center gap-2 text-sm font-display text-text">
             <Image
-              src="/rod-academy-logo.png"
+              src="/rod-academy-logo.avif"
               alt="Rod Academy logo"
               width={40}
               height={40}

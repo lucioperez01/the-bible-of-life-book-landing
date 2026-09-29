@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -186,6 +185,55 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* Reveal component animations (replaces tw-animate-css) */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-in-from-bottom {
+  from { opacity: 0; transform: translateY(2rem); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-in-from-left {
+  from { opacity: 0; transform: translateX(-2rem); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slide-in-from-right {
+  from { opacity: 0; transform: translateX(2rem); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.animate-in {
+  animation-fill-mode: both;
+}
+
+.fade-in {
+  animation-name: fade-in;
+}
+
+.slide-in-from-bottom-8 {
+  animation-name: slide-in-from-bottom;
+}
+
+.slide-in-from-left-8 {
+  animation-name: slide-in-from-left;
+}
+
+.slide-in-from-right-8 {
+  animation-name: slide-in-from-right;
+}
+
+.duration-700 {
+  animation-duration: 700ms;
+}
+
+.fill-mode-both {
+  animation-fill-mode: both;
 }
 
 @keyframes border-flow {

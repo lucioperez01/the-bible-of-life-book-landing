@@ -142,13 +142,13 @@ export const site = {
         ],
         whatsapp: [
             {
-                image: "/review_1.jpg",
+                image: "/review_1.webp",
                 alt: "Review de WhatsApp de Ruben: Me ha encantado el libro. Es una gran inversión si quieres mejorar en todos ámbitos en lo que se refiere a la autosuficiencia. Lo recomiendo bastante. Gracias Rod.",
                 transcription: "Me ha encantado el libro. Es una gran inversión si quieres mejorar en todos ámbitos en lo que se refiere a la autosuficiencia. Lo recomiendo bastante. Gracias Rod.",
                 author: "Ruben"
             },
             {
-                image: "/review_2.jpg",
+                image: "/review_2.webp",
                 alt: "Review de WhatsApp anónima: Hola buenas la verdad que el libro es increible me gusto mucho",
                 transcription: "Hola buenas la verdad que el libro es increible me gusto mucho 👏💪",
                 author: "Brain"

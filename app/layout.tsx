@@ -6,6 +6,7 @@ import Script from 'next/script'
 import { Analytics } from "@vercel/analytics/next"
 import WhatsAppBubble from "@/components/ui/whatsappBubble";
 
+// Preconnect to Google Fonts for faster loading
 
 const primary = Poppins({ 
   variable: "--font-primary",
@@ -57,6 +58,10 @@ export default function RootLayout({
 
   return (
     <html lang="es" className="dark">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      </head>
       <Script id="ms-clarity" strategy="afterInteractive">
           {`
             (function(c,l,a,r,i,t,y){
