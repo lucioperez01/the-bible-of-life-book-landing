@@ -5,6 +5,7 @@ import Navbar from "@/components/ui/navbar";
 import Script from 'next/script'
 import { Analytics } from "@vercel/analytics/next"
 import WhatsAppBubble from "@/components/ui/whatsappBubble";
+import { site } from "@/lib/site";
 
 // Preconnect to Google Fonts for faster loading
 
@@ -61,6 +62,59 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        
+        {/* Schema Markup for SEO and AI Search */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify([
+              {
+                "@context": "https://schema.org",
+                "@type": "Book",
+                "name": "La Biblia de la Vida",
+                "author": {
+                  "@type": "Person",
+                  "name": "Rod Montana"
+                },
+                "description": site.bookShowcase.description,
+                "offers": {
+                  "@type": "Offer",
+                  "price": site.bookShowcase.price,
+                  "priceCurrency": site.bookShowcase.currency,
+                  "availability": "https://schema.org/InStock"
+                },
+                "aggregateRating": {
+                  "@type": "AggregateRating",
+                  "ratingValue": "5",
+                  "reviewCount": "3528"
+                }
+              },
+              {
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                "mainEntity": site.faq.items.map(item => ({
+                  "@type": "Question",
+                  "name": item.q,
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": item.a
+                  }
+                }))
+              },
+              {
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                "name": site.brand.brandName,
+                "url": "https://legadorodmontana.com",
+                "description": site.hero.title + " " + site.hero.titleAccent,
+                "founder": {
+                  "@type": "Person",
+                  "name": "Rod Montana"
+                }
+              }
+            ])
+          }}
+        />
       </head>
       <Script id="ms-clarity" strategy="afterInteractive">
           {`
